@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group 'com.el'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.3.9.RELEASE', ext: 'pom'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.9.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
+    implementation group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '2.3.9.RELEASE'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.3.9.RELEASE'
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.18'
+    annotationProcessor 'org.projectlombok:lombok:1.18.18'
+    testImplementation 'org.projectlombok:lombok:1.18.18'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-logging', version: '2.3.9.RELEASE'
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.3.9.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.9.RELEASE'
+    implementation 'com.querydsl:querydsl-jpa:4.3.1'
+    annotationProcessor('com.querydsl:querydsl-apt:4.3.1:jpa',
+            'org.springframework.boot:spring-boot-starter-data-jpa:2.3.9.RELEASE')
+//    runtimeOnly 'mysql:mysql-connector-java'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    runtimeOnly group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'com.github.xiaoymin:swagger-bootstrap-ui:1.9.6'
+    implementation 'com.baomidou:mybatis-plus-boot-starter:3.3.2'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.3.9.RELEASE'
+
+}
+
+test {
+    useJUnitPlatform()
+}

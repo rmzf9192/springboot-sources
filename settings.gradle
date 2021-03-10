@@ -1,0 +1,5 @@
+rootProject.name = 'springboot-sources'
+include 'springboot-01'
+include 'springboot-jpa'
+include 'springboot-web'
+
